@@ -26,7 +26,7 @@ class ViewController: UIViewController {
 
    
     @IBAction func convertButton(_ sender: Any) {
-        binNumb.text = decNumb.text
+        binNumb.text! = conv(num: decNumb.text!, str: binNumb.text!)
     }
     
 
@@ -34,5 +34,12 @@ class ViewController: UIViewController {
         binNumb.text = "0"
         decNumb.text = "0"
     }
+    
+    func conv(num:String, str: String) -> String {
+        let numero = num
+        let str = String( Int(numero)! , radix: 2)
+        return str
+    }
+    
 }
 
